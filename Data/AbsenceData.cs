@@ -19,6 +19,6 @@ public class AbsenceData
 
     public override string ToString()
     {
-        return $"Name: {Name}\nEvent: {Event}\nDate: {Date}\nReason for Absence: {AbsenceReason}";
+        return $"Name: {Name}\nEvent: {Event}\nDate: {Date}\nReason for Absence: {AbsenceReason}\nDoes it recur: {Recur}";
     }
 }

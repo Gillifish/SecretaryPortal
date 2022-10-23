@@ -6,12 +6,12 @@
 <h1>Absence Form</h1>
 
 <div class="card">
-    <div>
+    <div class="section">
         <label for="name">Name: </label>
         <input type="text" name="" id="name" @bind=Name>
     </div>
     
-    <div>
+    <div class="section">
         <label for="events">Event: </label>
         <select class="eventSelect" name="Event" id="events" @bind="Event">
             <option value="default" selected>Select an Event</option>
@@ -21,16 +21,16 @@
         </select>
     </div>
 
-    <div>
+    <div class="section">
         <label for="date">Date: </label>
         <input type="date" name="date" id="date" @bind=Date>
     </div>
 
-    <div>
-        <label for="absenceReason">Reason for Absence: </label>
+    <div class="section">
+        <label for="absenceReason">Reason: </label>
         <select class="reasonSelect" name="Event" id="absenceReason" @bind="AbsenceReason">
             <option value="default" selected>Select a Reason</option>
-            <option value="WorkConflict">Unavoidable Work Conflict</option>
+            <option value="WorkConflict">Work Conflict</option>
             <option value="Mixer">Class Conflict</option>
             <option value="Rehearsal">Ensemble Rehearsal</option>
             <option value="OutOfTown">Out of Town</option>
@@ -39,17 +39,17 @@
         </select>
     </div>
 
-    <div>
+    <div class="section">
         <label>Does this conflict recur?</label>
         <div>
             <label for="recurYes">Yes</label>
-            <input type="radio" name="recur" id="recurYes" value="Yes">
+            <input type="radio" name="recur" id="recurYes" @bind=Recur>
             <label for="recurNo">No</label>
             <input type="radio" name="recur" id="recurNo" value="No">
         </div>
     </div>
 
-    <div>
+    <div class="section">
         <button class="submitBtn" @onclick="SubmitForm">Submit</button>
     </div>
 
