@@ -24,14 +24,14 @@
 @code {
     private string? Name { get; set; }
     private string? Event { get; set; }
-    private string filepath = $"./output/Roster.txt";
+    private string filepath = $"./output/attendance/Roster.txt";
     private string? errorMsg { get; set; }
     void takeAttendance()
     {
         if (Event != null && Name?.Length != 0)
         {
             Sinfonian sinfonian = new Sinfonian(Name, Event, DateTime.Now);
-            SinfonianAttendance.Data.FileData.AppendFile(sinfonian.ToString(), filepath);
+            SecretaryPortal.Data.FileData.AppendFile(sinfonian.ToString(), filepath);
             Console.WriteLine("Entry added");
 
             NavManager.NavigateTo("./submit");

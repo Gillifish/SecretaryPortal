@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace SinfonianAttendance.Data
+namespace SecretaryPortal.Data
 {
     public class FileData
     {
@@ -11,8 +11,8 @@ namespace SinfonianAttendance.Data
             Console.WriteLine(txt);
         }
 
-        public static void AppendFile(string sinfonian, string filename) =>
-            File.AppendAllText(filename, sinfonian);
+        public static void AppendFile(string strData, string filename) =>
+            File.AppendAllText(filename, strData);
         
     }
 }
