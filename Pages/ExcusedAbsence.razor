@@ -26,22 +26,28 @@
     </div>
 
     <div>
-        <label for="absenceReason">Event: </label>
+        <label for="absenceReason">Reason for Absence: </label>
         <select class="reasonSelect" name="Event" id="absenceReason" @bind="AbsenceReason">
-            <option value="default" selected>Select an Event</option>
+            <option value="default" selected>Select a Reason</option>
             <option value="WorkConflict">Unavoidable Work Conflict</option>
             <option value="Mixer">Class Conflict</option>
             <option value="Rehearsal">Ensemble Rehearsal</option>
             <option value="OutOfTown">Out of Town</option>
             <option value="Covid">Covid related</option>
+            <option value="Other">Other (Text Drew)</option>
         </select>
     </div>
 
     <div>
-        <label for="">Does this conflict recur?</label>
-        <input type="radio" name="recur" id="recurYes" value="Yes">
-        <input type="radio" name="recur" id="recurNo" value="No">
+        <label>Does this conflict recur?</label>
+        <div>
+            <label for="recurYes">Yes</label>
+            <input type="radio" name="recur" id="recurYes" value="Yes">
+            <label for="recurNo">No</label>
+            <input type="radio" name="recur" id="recurNo" value="No">
+        </div>
     </div>
+
 </div>
 
 @code {
