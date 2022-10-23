@@ -27,8 +27,6 @@
     text-align: center;
     align-items: center;
     color: red;
-    grid-row: 1;
-    grid-column: span 2;
 }
 
 .nameSection {
