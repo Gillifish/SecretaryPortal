@@ -1,12 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
-/*Console.WriteLine("Starting Server config...");
-Console.WriteLine("Enter output filename: ");
-string? fname = Console.ReadLine();*/
-
-GlobalVariables.filename = "092522.txt";
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
