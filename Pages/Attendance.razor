@@ -1,0 +1,45 @@
+﻿@page "/attendance"
+@inject NavigationManager NavManager
+
+<PageTitle>Attendance</PageTitle>
+
+<h1>Attendance</h1>
+
+<div class="card">
+    <p class="error">@errorMsg</p>
+    <p class="nameLabel">Name: </p>
+    <input class="nameInput" type="text" @bind=Name/>
+
+    <p class="eventLabel">Event: </p>
+    <select class="eventSelect" name="Event" id="events" @bind="Event">
+        <option value="default" selected>Select an Event</option>
+        <option value="Chapter">Chapter</option>
+        <option value="Mixer">Mixer</option>
+        <option value="SocialEvent">Social Event</option>
+    </select>
+
+    <button class="submitBtn" @onclick="takeAttendance">Submit</button>
+</div>
+
+@code {
+    private string? Name { get; set; }
+    private string? Event { get; set; }
+    private string filepath = $"./output/Roster.txt";
+    private string? errorMsg { get; set; }
+    void takeAttendance()
+    {
+        if (Event != null && Name?.Length != 0)
+        {
+            Sinfonian sinfonian = new Sinfonian(Name, Event, DateTime.Now);
+            SinfonianAttendance.Data.FileData.AppendFile(sinfonian.ToString(), filepath);
+            Console.WriteLine("Entry added");
+
+            NavManager.NavigateTo("./submit");
+        }
+        else
+        {
+            Console.WriteLine("Entry did not meet requirements...");
+            errorMsg = "Invalid Input";
+        }
+    }
+}
