@@ -65,7 +65,7 @@
     private string filepath = $"./output/absences/";
 
     void SubmitForm() {
-        filepath += Name + Date.Month + "-" + Date.Day;
+        filepath += Name.Replace(" ", String.Empty) + Date.Month + "-" + Date.Day;
         AbsenceData absenceData = new AbsenceData(Name, Event, Date, AbsenceReason, Recur);
         SecretaryPortal.Data.FileData.AppendFile(absenceData.ToString(), filepath);
 
