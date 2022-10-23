@@ -30,7 +30,9 @@
     {
         if (Event != null && Name?.Length != 0)
         {
-            Sinfonian sinfonian = new Sinfonian(Name, Event, DateTime.Now);
+            DateTime dateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time"));
+            
+            Sinfonian sinfonian = new Sinfonian(Name, Event, dateTime);
             SecretaryPortal.Data.FileData.AppendFile(sinfonian.ToString(), filepath);
             Console.WriteLine("Entry added");
 
